@@ -1,15 +1,29 @@
-import moviesQueryOptions from './moviesQueryOptions';
+import moviesQueryOptions from '../const/moviesQueryOptions';
+import fetchService from './fetchService';
 
 const fetchQueryService = {
   page: 1,
-  searchQuery: "",
 
-  fetchMovies() {
-    const url = `${moviesQueryOptions.BASE_URL}api_key=${moviesQueryOptions.API_KEY}&page=${this.page}`;
+  fetchMoviesTrand() {
+    const url = `${moviesQueryOptions.BASE_URL}${moviesQueryOptions.MOVIES_TRAND_URL}api_key=${moviesQueryOptions.API_KEY}&page=${this.page}`;
 
-    return fetch(url)
-      .then(res => res.json())
-      .catch(error => console.log(error.message));
+    return fetchService(url);
+  },
+  fetchMoviesQuerySearch(querySearch) {
+    if (!querySearch) {
+      return;
+    }
+    const url = `${moviesQueryOptions.BASE_URL}${moviesQueryOptions.MOVIES_SEARCH_URL}api_key=${moviesQueryOptions.API_KEY}&page=${this.page}&query=${querySearch}`;
+    return fetchService(url);
+  },
+
+  fetchMovieById(id) {
+    if(!id) {
+      return;
+    }
+
+    const url = `${moviesQueryOptions.BASE_URL}${moviesQueryOptions.MOVIE_URL}/${id}?api_key=${moviesQueryOptions.API_KEY}`;
+    return fetchService(url);
   },
 
   resetPage() {
@@ -31,17 +45,6 @@ const fetchQueryService = {
       return;
     }
     this.page -= 1;
-  },
-
-  getQuery() {
-    return this.searchQuery;
-  },
-  setQuery(value) {
-    this.searchQuery = value;
-  },
-
-  getUrl() {
-    return `${moviesQueryOptions.BASE_URL}api_key=${moviesQueryOptions.API_KEY}&page=${this.page}`;
   },
 }
 

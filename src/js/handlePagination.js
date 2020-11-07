@@ -43,7 +43,7 @@ const generateCountPages = (response) => {
 
 const queryNextPage = () => {
   fetchQueryService.incrementPage();
-  fetchQueryService.fetchMovies()
+  fetchQueryService.fetchMoviesTrand()
     .then(response => {
       console.log(response);
       handleStateBtn(response);
@@ -54,7 +54,7 @@ const queryNextPage = () => {
 }
 const queryPrevPage = () => {
   fetchQueryService.decrementPage();
-  fetchQueryService.fetchMovies()
+  fetchQueryService.fetchMoviesTrand()
     .then(response => {
       console.log(response);
       handleStateBtn(response);
@@ -70,7 +70,7 @@ const queryCheckedPage = (event) => {
   }
   const page = Number(target.textContent);
   fetchQueryService.setPage(page);
-  fetchQueryService.fetchMovies()
+  fetchQueryService.fetchMoviesTrand()
     .then(response => {
       console.log(response);
       handleStateBtn(response)

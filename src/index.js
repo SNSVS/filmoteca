@@ -2,7 +2,11 @@
 import './sass/styles.scss';
 import './js/index.js';
 
-import getTrendingMovies from './js/getTrendingMovies';
 
-getTrendingMovies();
+import getMoviesByQuery from './js/responsesToServer/getMoviesByQuery';
+import getTrendingMovies from './js/responsesToServer/getTrendingMovies';
+import getMovieById from './js/responsesToServer/getMovieById';
 
+// getMoviesByQuery("ten");
+// getTrendingMovies();
+// getMovieById(6844);

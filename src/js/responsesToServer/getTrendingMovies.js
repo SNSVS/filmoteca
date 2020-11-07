@@ -1,10 +1,10 @@
-import refsPaginate from './refsPaginat';
-import handlePagination from './handlePagination';
-import fetchQueryService from './services/fetchQueryService';
+import refsPaginate from '../refsPaginat';
+import handlePagination from '../handlePagination';
+import fetchQueryService from '../services/fetchQueryService';
 
 const getTrendingMovies = () => {
 
-  fetchQueryService.fetchMovies()
+  fetchQueryService.fetchMoviesTrand()
     .then(response => {
       handlePagination(response)
     })
