@@ -1,7 +1,7 @@
-.moovies__list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+.movies__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-gap: 20px;
   font-family: 'Roboto-Medium';
   font-style: normal;
   font-weight: 500;
@@ -9,28 +9,28 @@
   line-height: 16px;
 }
 
-.moovies__item {
+.movies__item {
   margin-bottom: 20px;
   @media (min-width: 768px) {
     margin-bottom: 30px;
   }
 }
 
-.moovies__title {
+.movies__title {
   color: #000000;
   text-transform: uppercase;
 }
 
-.moovies__genre {
+.movies__genre {
   color: #ff6b08;
   display: inline-block;
 }
 
-.moovies__description {
+.movies__description {
   display: inline;
 }
 
-.moovies__rating {
+.movies__rating {
   display: inline-block;
   width: 36px;
   height: 16px;
@@ -43,7 +43,7 @@
   margin-left: 10px;
 }
 
-.moovies__img {
+.movies__img {
   cursor: pointer;
   width: 280px;
   height: 398px;
