@@ -1,0 +1,37 @@
+.header {
+  background-image: url(../images/header/header-background.jpg);
+  background-repeat: no-repeat;
+  width: 320px;
+  height: 230px;
+  margin: 0 auto;
+}
+
+.header__main-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 45px 20px 0 20px;
+}
+
+.header__logo-title {
+  display: none;
+}
+
+.header__logo img {
+  width: 24px;
+  height: 24px;
+}
+
+.main-menu {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  line-height: 14px;
+  width: 140px;
+}
+
+.main-menu__list-item-link {
+  color: #fff;
+}
+
+
+@media
