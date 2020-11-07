@@ -1,0 +1,171 @@
+.single {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.single-box-img {
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+.single__img {
+    width: 280px;
+    height: 416px;
+    background-color: red;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+
+.single__header {
+    text-transform: uppercase;
+    font-family: 'Roboto-Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+ .single__info {
+    font-family: 'Roboto-Medium';
+ font-style: normal;
+ font-weight: 500;
+ font-size: 12px;
+ line-height: 14px;
+ color: #000000;
+ margin-bottom: 20px;
+ display: flex;
+}
+
+.single__key {
+color: #8C8C8C;
+}
+
+
+.single__box {
+    display: flex;
+    flex-direction: column;
+    min-width: 60px;
+}
+
+.single__info-keys {
+    margin-right: 40px;
+}
+
+.single__info-box {
+    margin-bottom: 8px;
+}
+
+.vote-box {
+    display: inline-block;
+    padding: 0 3px;
+    border-radius: 5px;
+}
+
+.vote {
+    background-color: #FF6B01;
+}
+
+.votes {
+    background: #F7F7F7;
+}
+
+.single-content__inner {
+    font-family: 'Roboto-Medium';
+    font-style: normal;
+    color: #000000;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 40px;
+}
+
+.single-content__title {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.single-content__text {
+    line-height: 20px;
+}
+
+
+.single__btn {
+    display: inline-block;
+    width: 136px;
+    height: 44px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid #000000;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Roboto-Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.watched {
+    background-color: #FF6B01;
+    color: #ffffff;
+    border: none;
+}
+
+.text-upper {
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+    .single {
+        display: flex;
+        padding-top: 60px;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+    
+    .single-box-img {
+        margin-right: 30px;
+    }
+
+    .single__header {
+        margin: 0;
+        margin-bottom: 22px;
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    .single-content__inner {
+        margin-bottom: 20px;
+    }
+
+    .watched {
+        margin-right: 15px;
+    }
+}
+ 
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .single__img {
+        width: 294px;
+        height: 416px;
+    }
+
+    .single-content__inner {
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+   .single__img {
+    width: 426px;
+    height: 514px;
+    }
+
+    .movies__list {
+        display: block;
+      }
+}
