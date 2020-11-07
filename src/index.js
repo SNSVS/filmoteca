@@ -3,9 +3,9 @@ import './sass/styles.scss';
 import './js/index.js';
 
 
-import getMoviesByQuery from './js/responsesToServer/getMoviesByQuery';
-import getTrendingMovies from './js/responsesToServer/getTrendingMovies';
-import getMovieById from './js/responsesToServer/getMovieById';
+import getMoviesByQuery from './js/requestsToServer/getMoviesByQuery';
+import getTrendingMovies from './js/requestsToServer/getTrendingMovies';
+import getMovieById from './js/requestsToServer/getMovieById';
 
 // getMoviesByQuery("ten");
 // getTrendingMovies();
