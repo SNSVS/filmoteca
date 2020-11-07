@@ -12,8 +12,19 @@ a {
 li {
   list-style-type: none;
 }
+
 .container {
-  max-width: 882px;
-  height: 100vh;
+  max-width: 280px;
+  background: #000;
   margin: 0 auto;
+  @media (min-width: 768px) {
+    & {
+      max-width: 618px;
+    }
+  }
+  @media (min-width: 1024px) {
+    & {
+      max-width: 822px;
+    }
+  }
 }
