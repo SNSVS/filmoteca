@@ -1,0 +1,11 @@
+.moovies__list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0, auto;
+  flex-wrap: wrap;
+}
+
+.moovies__item {
+  margin-bottom: 20px;
+  margin-right: 30px;
+}
