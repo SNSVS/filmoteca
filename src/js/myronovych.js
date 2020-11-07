@@ -3,16 +3,28 @@ import onefilmTpl from '../templates/onefilm.hbs'
 const single = document.querySelector('.single');
 
 const apiKey = '0582d3f510963f6ac84a3c592afe6834';
-const id = 12763
+// const id = 12763
 // const baseUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&page=1&include_adult=false&query=${query}`;
-const baseUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`;
 
-fetch(baseUrl)
+
+
+const cardsList = document.querySelector('.cards-list');
+
+const moviesList = document.querySelector('.js-movies__list');
+console.log(cardsList);
+moviesList.addEventListener('click', (e)=>{
+    if(e.target.nodeName !== "IMG") {
+        return;
+    }
+    let id = +e.target.id
+    const baseUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`;
+    fetch(baseUrl)
 .then(res => res.json())
 .then(data => {
     // console.log(data)
     let markap = onefilmTpl(data)
-    single.innerHTML = markap;
+    cardsList.innerHTML = markap;
+    moviesList.innerHTML = ''
     // const watchedBtn = document.querySelector('.watched');
 //     watchedBtn.addEventListener('click', ()=>{
 //         console.log(localStorage.getItem('key'));
@@ -34,14 +46,6 @@ fetch(baseUrl)
 
 // })
 })
-
-
-const moviesList = document.querySelector('.movies-list');
-moviesList.addEventListener('click', (e)=>{
-    if(e.target.nodeName !== "IMG") {
-        return;
-    }
-    let id = +e.target.id
 })
 
 
