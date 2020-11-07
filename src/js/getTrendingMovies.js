@@ -1,12 +1,25 @@
-import fetchWithQueryService from './services/fetchQueryMoviesService';
+import refsPaginate from './refsPaginat';
+import handlePagination from './handlePagination';
+import fetchQueryService from './services/fetchQueryService';
 
-const getTrendingMovies = (page = "") => {
-  fetchWithQueryService(page)
+const getTrendingMovies = () => {
+
+  fetchQueryService.fetchMovies()
     .then(response => {
-      console.log(response);
+      handlePagination(response)
     })
-    .catch(error => console.log(error));
+    .catch(error => console.log(error.message));
+
 }
+
+// const generateButtons = (countFilms) => {
+//   if (countFilms < 1) {
+//     return;
+//   }
+//   if (countFilms < 5 && countFilms > 1) {
+//
+//   }
+// }
 
 
 export default getTrendingMovies;
