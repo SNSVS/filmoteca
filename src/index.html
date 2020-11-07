@@ -11,14 +11,47 @@
   </head>
 
   <body>
-    <header>
-      <div class="container"></div>
+    <header class="header js-header">
+      <div class="container">
+        <nav class="header__main-nav">
+          <!-- Horbenko -->
+          <a href="" class="header__logo">
+            <img src="./images/film.png" alt="Filmoteka" />
+            <span class="header__logo-title">Filmoteka</span>
+          </a>
+          <ul class="main-menu">
+            <li class="main-menu__list-item">
+              <a href="#" class="main-menu__list-item-link">HOME</a>
+            </li>
+
+            <li class="main-menu__list-item">
+              <a href="#" class="main-menu__list-item-link">MY LIBRARY</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="search-form-box">
+          <form action="input" class="search-form">
+            <input class="search-input" type="text" placeholder="Поиск фильмов" />
+        </form>
+        </div>
+        <div class="error-message">
+        </div>
+        <div class="header-btn-box">
+          
+        </div>
+        <!-- /Horbenko -->
+      </div>
     </header>
     <main>
       <div class="container"></div>
     </main>
-    <footer>
-      <div class="container"></div>
+    <footer class="footer">
+      <div class="container">
+        <p class="footer__copywrite">
+          © 2020 | All Rights Reserved | Developed with by
+          <a href="#" class="footer__author-link"> GoIT Students </a>
+        </p>
+      </div>
     </footer>
   </body>
 </html>
