@@ -1,6 +1,8 @@
 import refsPaginate from './refsPaginat';
 import fetchQueryService from './services/fetchQueryService';
 
+console.log("page", fetchQueryService.getPage());
+
 const maxCountPages = 5;
 
 const btnDisable = (btn) => {
@@ -43,7 +45,8 @@ const generateCountPages = (response) => {
 
 const queryNextPage = () => {
   fetchQueryService.incrementPage();
-  fetchQueryService.fetchMoviesTrand()
+  console.log("net page", fetchQueryService.fetchMoviesQuerySearch());
+  fetchQueryService.fetchMoviesQuerySearch()
     .then(response => {
       console.log(response);
       handleStateBtn(response);
@@ -54,7 +57,7 @@ const queryNextPage = () => {
 }
 const queryPrevPage = () => {
   fetchQueryService.decrementPage();
-  fetchQueryService.fetchMoviesTrand()
+  fetchQueryService.fetchMoviesQuerySearch()
     .then(response => {
       console.log(response);
       handleStateBtn(response);
@@ -70,7 +73,7 @@ const queryCheckedPage = (event) => {
   }
   const page = Number(target.textContent);
   fetchQueryService.setPage(page);
-  fetchQueryService.fetchMoviesTrand()
+  fetchQueryService.fetchMoviesQuerySearch()
     .then(response => {
       console.log(response);
       handleStateBtn(response)
