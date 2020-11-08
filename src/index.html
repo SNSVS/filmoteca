@@ -1,74 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <title>Filmoteca</title>
-    <!-- Don't forget to delete this style tag. -->
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-  <body>
-    <header class="header js-header">
-      <div class="container">
-        <nav class="header__main-nav">
-          <!-- Horbenko -->
-          <a href="" class="header__logo">
-            <img src="./images/film.png" alt="Filmoteka" />
-            <span class="header__logo-title">Filmoteka</span>
-          </a>
-          <ul class="main-menu">
-            <li class="main-menu__list-item" id="homePage">
-              <a href="#" class="main-menu__list-item-link">HOME</a>
-            </li>
+  <title>Filmoteca</title>
+  <!-- Don't forget to delete this style tag. -->
+</head>
 
-            <li class="main-menu__list-item">
-              <a href="#" class="main-menu__list-item-link">MY LIBRARY</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="search-form-box" id="searchBtn">
-          <form action="input" class="search-form" id="search-form">
-            <input
-              class="search-input"
-              type="text"
-              placeholder="Поиск фильмов"
-            />
-          </form>
-        </div>
-        <div class="error-message"></div>
-        <div class="header-btn-box"></div>
-        <!-- /Horbenko -->
-      </div>
-    </header>
-    <main>
-      <!-- BONDARENKO -->
-      <div class="container">
-        <div class="cards-list">
-          <ul class="movies__list js-movies__list"></ul>
-        </div>
-      </div>
-      <!-- BONDARENKO -->
-      <!-- for pagination -->
-      <div class="container">
-        <div class="js-pagination pagination">
-          <button class="js-pagination__btn--prev pagination__btn--prev">prev</button>
-          <ul class="js-pagination-pages pagination-pages">
+<body>
+  <header class="header js-header">
+    <div class="container">
+      <nav class="header__main-nav">
+        <!-- Horbenko -->
+        <a href="" class="header__logo">
+          <img src="./images/film.png" alt="Filmoteka" />
+          <span class="header__logo-title">Filmoteka</span>
+        </a>
+        <ul class="main-menu">
+          <li class="main-menu__list-item" id="homePage">
+            <a href="#" class="main-menu__list-item-link">HOME</a>
+          </li>
 
-          </ul>
-          <button class="js-pagination__btn--next pagination__btn--next">next</button>
-        </div>
+          <li class="main-menu__list-item">
+            <a href="#" class="main-menu__list-item-link">MY LIBRARY</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="search-form-box" id="searchBtn">
+        <form action="input" class="search-form" id="search-form">
+          <input class="search-input" type="text" placeholder="Поиск фильмов" />
+        </form>
       </div>
-      <!-- for pagination -->
-    </main>
-    <footer class="footer">
-      <div class="container">
-        <p class="footer__copywrite">
-          © 2020 | All Rights Reserved | Developed with by
-          <a href="#" class="footer__author-link"> GoIT Students </a>
-        </p>
+      <div class="error-message"></div>
+      <div class="header-btn-box"></div>
+      <!-- /Horbenko -->
+    </div>
+
+  </header>
+  <main>
+    <!-- BONDARENKO -->
+    <div class="container">
+      <div class="cards-list">
+        <ul class="movies__list js-movies__list"></ul>
       </div>
-    </footer>
-  </body>
+    </div>
+    <!-- BONDARENKO -->
+    <!-- for pagination -->
+    <div class="container">
+      <div class="js-pagination pagination">
+        <button class="js-pagination__btn--prev pagination__btn--prev">prev</button>
+        <ul class="js-pagination-pages pagination-pages">
+
+        </ul>
+        <button class="js-pagination__btn--next pagination__btn--next">next</button>
+      </div>
+    </div>
+    <!-- for pagination -->
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__copywrite">
+        © 2020 | All Rights Reserved | Developed with by
+        <a href="#" class="footer__author-link"> GoIT Students </a>
+      </p>
+    </div>
+  </footer>
+</body>
+
 </html>
