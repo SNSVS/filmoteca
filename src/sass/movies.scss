@@ -28,8 +28,24 @@
   display: inline-block;
 }
 
+.movies__genre:not(:last-child)::after {
+  content: ',';
+}
+
 .movies__description {
   display: inline;
+}
+.movies__year {
+  color: #ff6b08;
+  display: inline-block;
+}
+
+.movies__year::before {
+  content: '|';
+  margin-right: 2px;
+  margin-left: 2px;
+  color: #ff6b08;
+  display: inline-block;
 }
 
 .movies__rating {
@@ -42,7 +58,7 @@
   text-align: center;
   padding-left: 10px;
   padding-right: 10px;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 .movies__img {
