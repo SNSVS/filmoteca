@@ -1,5 +1,7 @@
 import refs from './refs';
 import buttons from '../templates/buttons.hbs';
+import handlePaginateStorage from './paginate/handlePaginateStorage';
+
 console.log(refs);
 function pullMyLibrary() {
   refs.myLibrary.addEventListener('click', onMyLibrary);
@@ -12,7 +14,8 @@ function onMyLibrary() {
   console.log(watcherBtn);
   const watcherBtn = document.getElementById('watcher-btn');
   watcherBtn.addEventListener('click', onWatcherBtn);
-  console.log(watchedMovie);
+  // console.log(watchedMovie);
+  handlePaginateStorage(watchedMovie)
   return watchedMovie;
 }
 

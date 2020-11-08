@@ -7,8 +7,10 @@ const addToLocalStorage = () => {
       .then(response => {
         const itemsToStorage = [];
         const itemsInStorage = JSON.parse(localStorage.getItem("watched"));
-        itemsToStorage.push(...itemsInStorage, ...response.results);
-        console.log(itemsToStorage);
+        if (itemsInStorage) {
+          itemsToStorage.push(...itemsInStorage, ...response.results);
+          console.log(itemsToStorage);
+        }
         localStorage.setItem("watched", JSON.stringify(itemsToStorage));
       })
   }
