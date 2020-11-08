@@ -1,6 +1,9 @@
 import onefilmTpl from '../templates/onefilm.hbs'
-
-const single = document.querySelector('.single');
+import renderTemplate from './renderTemplate.js'
+import refs from './refs.js'
+import getTrendingMovies from './getTrendingMovies'
+import searchForm from '../templates/searchForm.hbs'
+// const single = document.querySelector('.single');
 
 const apiKey = '0582d3f510963f6ac84a3c592afe6834';
 // const id = 12763
@@ -8,44 +11,40 @@ const apiKey = '0582d3f510963f6ac84a3c592afe6834';
 
 
 
-const cardsList = document.querySelector('.cards-list');
+// const cardsList = document.querySelector('.cards-list');
 
-const moviesList = document.querySelector('.js-movies__list');
-console.log(cardsList);
-moviesList.addEventListener('click', (e)=>{
-    if(e.target.nodeName !== "IMG") {
+// const moviesList = document.querySelector('.js-movies__list');
+// console.log(cardsList);
+refs.movies.addEventListener('click', onMovies);
+// refs.homePage.addEventListener('click', onHomePage)
+
+function onMovies(e) {
+    if (e.target.nodeName !== "IMG") {
         return;
-    }
-    let id = +e.target.id
+    };
+    let id = +e.target.id;
     const baseUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`;
-    fetch(baseUrl)
-.then(res => res.json())
-.then(data => {
-    // console.log(data)
-    let markap = onefilmTpl(data)
-    cardsList.innerHTML = markap;
-    moviesList.innerHTML = ''
-    // const watchedBtn = document.querySelector('.watched');
-//     watchedBtn.addEventListener('click', ()=>{
-//         console.log(localStorage.getItem('key'));
-//         const localStorageArray = []
-//         localStorageArray.push(JSON.parse(localStorage.getItem('key')))
-//         for(let i =0; i<localStorageArray.length; i++) {
-//             if(data.id === localStorageArray[i].id) {
-//                 console.log(data.id === localStorageArray[i].id);
-//                 console.log(localStorage.key[i]);
-//                 delete localStorageArray[i]
-//             } else {
-
-//             }
-//         }
+    fetch(baseUrl).then(res => res.json()).then(data => {
+        renderTemplate(data, onefilmTpl, refs.movies);
+        refs.movies.removeEventListener('click', onMovies);
+        refs.movies.classList.remove('movies__list')
+        refs.searchBtn.innerHTML = ""
+refs.homePage.addEventListener('click', onHomePage)
         
-            
-        
-//     localStorage.setItem('key', JSON.stringify(data))
+    }
+    )
+}
 
-// })
-})
-})
-
+function onHomePage() {
+    // renderTemplate(data, onefilmTpl, refs.movies);
+    getTrendingMovies()
+    refs.movies.classList.add('movies__list')
+    refs.movies.addEventListener('click', onMovies);
+    console.log(searchForm());
+    refs.searchBtn.innerHTML=searchForm()
+refs.homePage.removeEventListener('click', onHomePage)
+    // refs.movies.classList.remove('movies__list')
+    
+    
+}
 
