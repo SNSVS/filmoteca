@@ -1,8 +1,10 @@
 import onefilmTpl from '../templates/onefilm.hbs'
-import renderTemplate from './renderTemplate.js'
+// import renderTemplateListMovies from './renderTemplateListMovies.js'
+import renderTemplateSingleMovie from './renderTemplateSingleMovie';
 import refs from './refs.js'
 import getTrendingMovies from './requestsToServer/getTrendingMovies';
-import getMovieById from './requestsToServer/getMovieById';
+// import getMovieById from './requestsToServer/getMovieById';
+import fetchQueryService from './services/fetchQueryService';
 import searchForm from '../templates/searchForm.hbs'
 // const single = document.querySelector('.single');
 
@@ -25,19 +27,26 @@ function onMovies(e) {
     };
     let id = +e.target.id;
     const baseUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`;
-    fetch(baseUrl).then(res => res.json()).then(data => {
-        renderTemplate(data, onefilmTpl, refs.movies);
-        refs.movies.removeEventListener('click', onMovies);
-        refs.movies.classList.remove('movies__list')
-        refs.searchBtn.innerHTML = ""
-refs.homePage.addEventListener('click', onHomePage)
-
-    }
-    )
+    fetchQueryService.fetchMovieById(id).then(response => {
+      renderTemplateSingleMovie(response);
+      refs.movies.removeEventListener('click', onMovies);
+      refs.movies.classList.remove('movies__list')
+      refs.searchBtn.innerHTML = ""
+      refs.homePage.addEventListener('click', onHomePage)
+    })
+//     fetch(baseUrl).then(res => res.json()).then(data => {
+//         renderTemplateSingleMovie(data);
+//         refs.movies.removeEventListener('click', onMovies);
+//         refs.movies.classList.remove('movies__list')
+//         refs.searchBtn.innerHTML = ""
+// refs.homePage.addEventListener('click', onHomePage)
+//
+//     }
+//     )
 }
 
 function onHomePage() {
-    // renderTemplate(data, onefilmTpl, refs.movies);
+    // renderTemplateListMovies(data, onefilmTpl, refs.movies);
     getTrendingMovies();
     refs.movies.classList.add('movies__list')
     refs.movies.addEventListener('click', onMovies);

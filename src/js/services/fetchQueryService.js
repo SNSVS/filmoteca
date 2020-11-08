@@ -1,6 +1,6 @@
 import moviesQueryOptions from '../const/moviesQueryOptions';
 import fetchService from './fetchService';
-import renderTemplate from '../renderTemplate';
+import renderTemplateListMovies from '../renderTemplateListMovies';
 
 const fetchQueryService = {
   page: 1,
@@ -10,7 +10,7 @@ const fetchQueryService = {
 
     return fetchService(url)
       .then(response => {
-      renderTemplate(response.results);
+      renderTemplateListMovies(response.results);
       return response;
     })
       .catch(error => console.log(error));
