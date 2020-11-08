@@ -1,18 +1,15 @@
-// import 'gulp-rigger'
 import './sass/styles.scss';
-import './js/myronovych.js'
-import withLocalStorage from "./js/temp/withLocalStorage"
+import './js/myronovych.js';
+import withLocalStorage from './js/temp/withLocalStorage';
 import getMoviesByQuery from './js/requestsToServer/getMoviesByQuery';
 import getTrendingMovies from './js/requestsToServer/getTrendingMovies';
 import getMovieById from './js/requestsToServer/getMovieById';
 import debouncedInputQuery from './js/homePage';
-import myLibrary from './js/myLibrary';
+import pullMyLibrary from './js/myLibraryBtn';
 
 getTrendingMovies();
 // getMoviesByQuery("Ten");
 // withLocalStorage();
-myLibrary();
-
 // const myLibruaryRef = document.querySelector("#myLibrary");
 // myLibruaryRef.addEventListener("click", () => {console.log("event event")})
 //
@@ -23,3 +20,5 @@ myLibrary();
 // console.log("after paginate", afterPaginate);
 //
 // console.log("ref my", myLibruaryRef);
+
+pullMyLibrary();
