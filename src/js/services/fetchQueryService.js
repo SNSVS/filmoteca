@@ -1,6 +1,7 @@
 import moviesQueryOptions from '../const/moviesQueryOptions';
 import fetchService from './fetchService';
 import renderTemplateListMovies from '../renderTemplateListMovies';
+import handleMoviesMiddleWare from '../middlewares/handleMoviesMiddleware';
 
 const fetchQueryService = {
   page: 1,
@@ -11,7 +12,7 @@ const fetchQueryService = {
     console.log("trand", url);
     return fetchService(url)
       .then(response => {
-      renderTemplateListMovies(response.results);
+      renderTemplateListMovies(handleMoviesMiddleWare(response.results));
        console.log("trand", response);
        return response;
     })
@@ -33,7 +34,7 @@ const fetchQueryService = {
     console.log("by query", url);
     return fetchService(url)
       .then(response => {
-        renderTemplateListMovies(response.results);
+        renderTemplateListMovies(handleMoviesMiddleWare(response.results));
         console.log("by query", response);
         return response
     })
