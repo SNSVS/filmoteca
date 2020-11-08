@@ -3,7 +3,7 @@
     <img class="movies__img" id="{{id}}" src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt={{original_title}} />
     <p class="movies__title">{{original_title}}</p>
     <ul class="movies__description">
-        {{#each genre_ids}}
+        {{#each genres}}
         <li class="movies__genre">{{this}}</li>
         {{/each}}
     </ul>
