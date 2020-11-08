@@ -1,9 +1,9 @@
 import refsPaginate from '../refsPaginat';
 import handlePagination from '../handlePagination';
 import fetchQueryService from '../services/fetchQueryService';
+import renderTemplate from '../renderTemplate';
 
 const getTrendingMovies = () => {
-
   fetchQueryService.fetchMoviesTrand()
     .then(response => {
       handlePagination(response)

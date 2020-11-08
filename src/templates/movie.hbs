@@ -1,0 +1,12 @@
+{{#each this}}
+<li class="movies__item">
+    <img class="movies__img" id="{{id}}" src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt={{original_title}} />
+    <p class="movies__title">{{original_title}}</p>
+    <ul class="movies__description">
+        {{#each genre_ids}}
+        <li class="movies__genre">{{this}}</li>
+        {{/each}}
+    </ul>
+    <div class="movies__rating">{{vote_average}}</div>
+</li>
+{{/each}}

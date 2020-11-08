@@ -5,6 +5,7 @@ const getMoviesByQuery = (query) => {
 
   fetchQueryService.fetchMoviesQuerySearch(query)
     .then(response => {
+
       handlePagination(response)
     })
     .catch(error => console.log(error.message));

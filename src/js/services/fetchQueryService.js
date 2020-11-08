@@ -1,5 +1,6 @@
 import moviesQueryOptions from '../const/moviesQueryOptions';
 import fetchService from './fetchService';
+import renderTemplate from '../renderTemplate';
 
 const fetchQueryService = {
   page: 1,
@@ -7,7 +8,12 @@ const fetchQueryService = {
   fetchMoviesTrand() {
     const url = `${moviesQueryOptions.BASE_URL}${moviesQueryOptions.MOVIES_TRAND_URL}api_key=${moviesQueryOptions.API_KEY}&page=${this.page}`;
 
-    return fetchService(url);
+    return fetchService(url)
+      .then(response => {
+      renderTemplate(response.results);
+      return response;
+    })
+      .catch(error => console.log(error));
   },
   fetchMoviesQuerySearch(querySearch) {
     if (!querySearch) {
