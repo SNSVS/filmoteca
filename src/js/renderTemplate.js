@@ -1,7 +1,9 @@
+import template from "../templates/movie.hbs"
+import refs from './refs';
 
-function renderTemplate(data, template, place)  {
+function renderTemplate(data)  {
   const movieTemplate = template(data);
-  place.innerHTML = movieTemplate;
+  refs.movies.innerHTML = movieTemplate;
 };
 
 export default renderTemplate;
