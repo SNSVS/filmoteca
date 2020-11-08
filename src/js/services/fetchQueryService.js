@@ -3,6 +3,7 @@ import fetchService from './fetchService';
 import renderTemplateListMovies from '../renderTemplateListMovies';
 import handleMoviesMiddleWare from '../middlewares/handleMoviesMiddleware';
 
+
 const fetchQueryService = {
   page: 1,
   searchQuery: "",
@@ -12,6 +13,7 @@ const fetchQueryService = {
     console.log("trand", url);
     return fetchService(url)
       .then(response => {
+        
       renderTemplateListMovies(handleMoviesMiddleWare(response.results));
        console.log("trand", response);
        return response;
@@ -34,6 +36,7 @@ const fetchQueryService = {
     console.log("by query", url);
     return fetchService(url)
       .then(response => {
+        console.log('object');
         renderTemplateListMovies(handleMoviesMiddleWare(response.results));
         console.log("by query", response);
         return response

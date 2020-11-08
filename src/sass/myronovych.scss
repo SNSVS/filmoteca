@@ -103,9 +103,10 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
+  transition: background-color 1s ease-out;
 }
 
-.watched {
+.single__btn:hover {
   background-color: #ff6b01;
   color: #ffffff;
   border: none;
