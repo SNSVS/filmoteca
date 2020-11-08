@@ -8,5 +8,5 @@ import getTrendingMovies from './js/requestsToServer/getTrendingMovies';
 import getMovieById from './js/requestsToServer/getMovieById';
 
 // getMoviesByQuery("ten");
-// getTrendingMovies();
+getTrendingMovies();
 // getMovieById(6844);
