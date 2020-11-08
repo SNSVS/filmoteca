@@ -4,4 +4,7 @@ export default {
   searchBtn: document.getElementById('searchBtn'),
   homePage: document.getElementById('homePage'),
   watchedBtn: document.querySelector('.watched-js'),
+  myLibrary: document.getElementById('myLibrary'),
+
+  queueBtn: document.getElementById('queue-btn'),
 };
