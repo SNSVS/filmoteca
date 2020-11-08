@@ -20,7 +20,7 @@
           <span class="header__logo-title">Filmoteka</span>
         </a>
         <ul class="main-menu">
-          <li class="main-menu__list-item">
+          <li class="main-menu__list-item" id="homePage">
             <a href="#" class="main-menu__list-item-link">HOME</a>
           </li>
 
@@ -29,8 +29,8 @@
           </li>
         </ul>
       </nav>
-      <div class="search-form-box">
-        <form action="input" class="search-form">
+      <div class="search-form-box" id="searchBtn">
+        <form action="input" class="search-form" id="search-form">
           <input class="search-input" type="text" placeholder="Поиск фильмов" />
         </form>
       </div>
@@ -38,15 +38,27 @@
       <div class="header-btn-box"></div>
       <!-- /Horbenko -->
     </div>
-  </header>
 
+  </header>
   <main>
     <!-- BONDARENKO -->
     <div class="container">
-      <div class="one-movie"></div>
-      <ul class="movies__list js-movies__list"></ul>
+      <div class="cards-list">
+        <ul class="movies__list js-movies__list"></ul>
+      </div>
     </div>
     <!-- BONDARENKO -->
+    <!-- for pagination -->
+    <div class="container">
+      <div class="js-pagination pagination">
+        <button class="js-pagination__btn--prev pagination__btn--prev">prev</button>
+        <ul class="js-pagination-pages pagination-pages">
+
+        </ul>
+        <button class="js-pagination__btn--next pagination__btn--next">next</button>
+      </div>
+    </div>
+    <!-- for pagination -->
   </main>
   <footer class="footer">
     <div class="container">
