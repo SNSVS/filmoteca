@@ -125,6 +125,8 @@
         rgba(0, 0, 0, 0.5)
       ),
       url(../images/header/header-background-768.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .header__logo-title {
     display: inline;
@@ -152,5 +154,7 @@
         rgba(0, 0, 0, 0.5)
       ),
       url(../images/header/header-background-1024.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
