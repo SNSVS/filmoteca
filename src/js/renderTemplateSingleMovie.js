@@ -1,5 +1,5 @@
 import template from '../templates/onefilm.hbs';
-import handlePagination from './handlePagination';
+// import handlePagination from './handlePagination';
 import refs from './refs';
 
 function renderTemplateSingleMovie(data) {
