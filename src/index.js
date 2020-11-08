@@ -6,6 +6,7 @@ import getTrendingMovies from './js/requestsToServer/getTrendingMovies';
 import getMovieById from './js/requestsToServer/getMovieById';
 import debouncedInputQuery from './js/homePage';
 import pullMyLibrary from './js/myLibraryBtn';
+// import spinRef from './js/spin' //Вызвать в нужном месте. Спиннер
 
 getTrendingMovies();
 // getMoviesByQuery("Ten");
@@ -22,3 +23,5 @@ getTrendingMovies();
 // console.log("ref my", myLibruaryRef);
 
 pullMyLibrary();
+
+
