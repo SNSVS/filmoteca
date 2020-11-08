@@ -1,5 +1,5 @@
 .movies__list {
-  margin-top: 60px;
+  margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-gap: 20px;
@@ -8,7 +8,9 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
-  padding-top: 60px;
+  @media (min-width: 768px) {
+    margin-top: 60px;
+  }
 }
 
 .movies__item {
