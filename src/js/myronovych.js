@@ -47,6 +47,7 @@ function onMovies(e) {
 
 function onHomePage() {
     // renderTemplateListMovies(data, onefilmTpl, refs.movies);
+    fetchQueryService.resetPage();
     getTrendingMovies();
     refs.movies.classList.add('movies__list')
     refs.movies.addEventListener('click', onMovies);

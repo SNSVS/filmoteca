@@ -4,23 +4,40 @@ import renderTemplateListMovies from '../renderTemplateListMovies';
 
 const fetchQueryService = {
   page: 1,
+  searchQuery: "",
 
   fetchMoviesTrand() {
     const url = `${moviesQueryOptions.BASE_URL}${moviesQueryOptions.MOVIES_TRAND_URL}api_key=${moviesQueryOptions.API_KEY}&page=${this.page}`;
-
+    console.log("trand", url);
     return fetchService(url)
       .then(response => {
       renderTemplateListMovies(response.results);
-      return response;
+       console.log("trand", response);
+       return response;
     })
       .catch(error => console.log(error));
   },
-  fetchMoviesQuerySearch(querySearch) {
-    if (!querySearch) {
+  // fetchMoviesQuerySearch(querySearch) {
+  //   if (!querySearch) {
+  //     return;
+  //   }
+  //   const url = `${moviesQueryOptions.BASE_URL}${moviesQueryOptions.MOVIES_SEARCH_URL}api_key=${moviesQueryOptions.API_KEY}&page=${this.page}&query=${querySearch}`;
+  //   return fetchService(url);
+  // },
+  fetchMoviesQuerySearch() {
+    if (!this.searchQuery) {
       return;
     }
-    const url = `${moviesQueryOptions.BASE_URL}${moviesQueryOptions.MOVIES_SEARCH_URL}api_key=${moviesQueryOptions.API_KEY}&page=${this.page}&query=${querySearch}`;
-    return fetchService(url);
+    console.log(this.searchQuery);
+    const url = `${moviesQueryOptions.BASE_URL}${moviesQueryOptions.MOVIES_SEARCH_URL}api_key=${moviesQueryOptions.API_KEY}&page=${this.page}&query=${this.searchQuery}`;
+    console.log("by query", url);
+    return fetchService(url)
+      .then(response => {
+        renderTemplateListMovies(response.results);
+        console.log("by query", response);
+        return response
+    })
+      .catch(error => console.log(error));
   },
 
   fetchMovieById(id) {
@@ -30,6 +47,9 @@ const fetchQueryService = {
 
     const url = `${moviesQueryOptions.BASE_URL}${moviesQueryOptions.MOVIE_URL}/${id}?api_key=${moviesQueryOptions.API_KEY}`;
     return fetchService(url);
+  },
+  setSearchQuery(query) {
+    this.searchQuery = query;
   },
 
   resetPage() {

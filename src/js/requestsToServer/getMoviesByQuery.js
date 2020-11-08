@@ -1,12 +1,13 @@
-import handlePagination from '../handlePagination';
+import handlePaginationSearchQuery from '../paginate/handlePaginateSearchQuery';
 import fetchQueryService from '../services/fetchQueryService';
+import renderTemplateListMovies from '../renderTemplateListMovies';
 
 const getMoviesByQuery = (query) => {
-
-  fetchQueryService.fetchMoviesQuerySearch(query)
+  fetchQueryService.resetPage();
+  fetchQueryService.setSearchQuery(query);
+  fetchQueryService.fetchMoviesQuerySearch()
     .then(response => {
-
-      handlePagination(response)
+      handlePaginationSearchQuery(response)
     })
     .catch(error => console.log(error.message));
 }
