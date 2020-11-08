@@ -10,4 +10,15 @@ import pullMyLibrary from './js/myLibraryBtn';
 getTrendingMovies();
 // getMoviesByQuery("Ten");
 // withLocalStorage();
+// const myLibruaryRef = document.querySelector("#myLibrary");
+// myLibruaryRef.addEventListener("click", () => {console.log("event event")})
+//
+// const movieItems = JSON.parse(localStorage.getItem("watched"));
+//
+// const afterPaginate = handlePaginateStorage(movieItems);
+//
+// console.log("after paginate", afterPaginate);
+//
+// console.log("ref my", myLibruaryRef);
+
 pullMyLibrary();
