@@ -1,5 +1,5 @@
 import renderTemplateListMovies from '../renderTemplateListMovies';
-import handleMoviesMiddleWare from '../middlewares/handleMoviesMiddleware';
+import handleMoviesStorageMiddleWare from '../middlewares/handleMoviesStorageMiddleware';
 
 export default {
   _page: 1,
@@ -88,6 +88,6 @@ export default {
 
   showContent() {
     const moviesToShow = this._movies.slice(this._skip, this._before);
-    renderTemplateListMovies(handleMoviesMiddleWare(moviesToShow));
+    renderTemplateListMovies(handleMoviesStorageMiddleWare(moviesToShow));
   },
 };
