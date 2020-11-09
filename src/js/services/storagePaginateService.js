@@ -32,7 +32,7 @@ export default {
   },
 
   showChosenPage(event) {
-    const {target, currentTarget} = event;
+    const { target, currentTarget } = event;
     if (target === currentTarget) {
       return;
     }
@@ -92,4 +92,4 @@ export default {
     hiddenShowPaginateArray(this._totalPages);
     renderTemplateListMovies(handleMoviesStorageMiddleWare(moviesToShow));
   },
-}
+};

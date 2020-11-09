@@ -6,8 +6,14 @@ import getTrendingMovies from './js/requestsToServer/getTrendingMovies';
 import getMovieById from './js/requestsToServer/getMovieById';
 import debouncedInputQuery from './js/homePage';
 import pullMyLibrary from './js/myLibraryBtn';
-// import spinRef from './js/spin' //Вызвать в нужном месте. Спиннер
 
+// Для встраивания спинера
+// import spinner from './js/spinner'; // подключить файл
+// spinnner.start();  // вызвать в нужном месте для старта
+// spinnner.stop();   // вызвать в нужном месте для остановки
+
+// import { Spinner } from 'spin.js';
+// import spinerOpts from './js/spinerOpts'
 getTrendingMovies();
 // getMoviesByQuery("Ten");
 // withLocalStorage();
@@ -23,5 +29,3 @@ getTrendingMovies();
 // console.log("ref my", myLibruaryRef);
 
 pullMyLibrary();
-
-
