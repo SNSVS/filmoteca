@@ -2,12 +2,15 @@ import moviesQueryOptions from '../const/moviesQueryOptions';
 import fetchService from './fetchService';
 import renderTemplateListMovies from '../renderTemplateListMovies';
 import handleMoviesMiddleWare from '../middlewares/handleMoviesMiddleware';
-import {hiddenShowPaginateArray, hiddenPagination} from "../paginate/hiddenShowPaginate";
-
+import {
+  hiddenShowPaginateArray,
+  hiddenPagination,
+} from '../paginate/hiddenShowPaginate';
+import errorNessege from '../errorMessage';
 
 const fetchQueryService = {
   page: 1,
-  searchQuery: "",
+  searchQuery: '',
 
   fetchMoviesTrand() {
     const url = `${moviesQueryOptions.BASE_URL}${moviesQueryOptions.MOVIES_TRAND_URL}api_key=${moviesQueryOptions.API_KEY}&page=${this.page}`;
@@ -16,7 +19,7 @@ const fetchQueryService = {
         hiddenShowPaginateArray(response.total_pages);
         renderTemplateListMovies(handleMoviesMiddleWare(response.results));
         return response;
-    })
+      })
       .catch(error => console.log(error));
   },
 
@@ -29,14 +32,15 @@ const fetchQueryService = {
       .then(response => {
         hiddenShowPaginateArray(response.total_pages);
         renderTemplateListMovies(handleMoviesMiddleWare(response.results));
-        console.log("by query", response);
-        return response
-    })
+        if (response.results.length === 0) errorNessege();
+        console.log('by query', response);
+        return response;
+      })
       .catch(error => console.log(error));
   },
 
   fetchMovieById(id) {
-    if(!id) {
+    if (!id) {
       return;
     }
     hiddenPagination();
@@ -67,6 +71,6 @@ const fetchQueryService = {
     }
     this.page -= 1;
   },
-}
+};
 
 export default fetchQueryService;

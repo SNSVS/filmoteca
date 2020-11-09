@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <header class="header js-header">
+  <header class="header header-home js-header">
     <div class="container">
       <nav class="header__main-nav">
         <!-- Horbenko -->
@@ -51,11 +51,23 @@
     <!-- for pagination -->
     <div class="container">
       <div class="js-pagination pagination">
-        <button class="js-pagination__btn--prev pagination__btn--prev">prev</button>
+        <button class="js-pagination__btn--prev pagination__btn--prev">
+          <svg class="arrow-btn">
+            <use
+              xlink:href="./images/icons/symbol-defs.svg#icon-arrow-left"
+            ></use>
+          </svg>
+        </button>
         <ul class="js-pagination-pages pagination-pages">
 
         </ul>
-        <button class="js-pagination__btn--next pagination__btn--next">next</button>
+        <button class="js-pagination__btn--next pagination__btn--next">
+          <svg class="arrow-btn">
+            <use
+              xlink:href="./images/icons/symbol-defs.svg#icon-arrow-right"
+            ></use>
+          </svg>
+        </button>
       </div>
     </div>
     <!-- for pagination -->

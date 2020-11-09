@@ -5,6 +5,7 @@ import getMoviesByQuery from './js/requestsToServer/getMoviesByQuery';
 import getTrendingMovies from './js/requestsToServer/getTrendingMovies';
 import getMovieById from './js/requestsToServer/getMovieById';
 import debouncedInputQuery from './js/homePage';
+import headerClassToggle from './js/headerClassToggle.js';
 import pullMyLibrary from './js/myLibraryBtn';
 
 // Для встраивания спинера
