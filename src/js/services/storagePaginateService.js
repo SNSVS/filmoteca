@@ -1,5 +1,6 @@
 import renderTemplateListMovies from '../renderTemplateListMovies';
 import handleMoviesStorageMiddleWare from '../middlewares/handleMoviesStorageMiddleware';
+import {hiddenShowPaginateArray} from "../paginate/hiddenShowPaginate"
 
 export default {
   _page: 1,
@@ -88,6 +89,7 @@ export default {
 
   showContent() {
     const moviesToShow = this._movies.slice(this._skip, this._before);
+    hiddenShowPaginateArray(this._totalPages);
     renderTemplateListMovies(handleMoviesStorageMiddleWare(moviesToShow));
   },
 }
