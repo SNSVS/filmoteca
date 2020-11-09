@@ -7,7 +7,7 @@ export const queryNextPage = () => {
     .then(response => {
       handleStateBtn(response);
       const btnPages = document.querySelectorAll(".pagination-pages--item__btn");
-      updateBtnPagesContent(btnPages, fetchQueryService.getPage(), true);
+      updateBtnPagesContent(btnPages, fetchQueryService.getPage(), true, response.total_pages);
     })
     .catch(error => console.log(error));
 }
@@ -17,7 +17,7 @@ export const queryPrevPage = () => {
     .then(response => {
       handleStateBtn(response);
       const btnPages = document.querySelectorAll(".pagination-pages--item__btn");
-      updateBtnPagesContent(btnPages, fetchQueryService.getPage(), false);
+      updateBtnPagesContent(btnPages, fetchQueryService.getPage(), false, response.total_pages);
     })
     .catch(error => console.log(error));
 }
