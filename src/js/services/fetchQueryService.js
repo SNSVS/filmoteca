@@ -10,33 +10,23 @@ const fetchQueryService = {
 
   fetchMoviesTrand() {
     const url = `${moviesQueryOptions.BASE_URL}${moviesQueryOptions.MOVIES_TRAND_URL}api_key=${moviesQueryOptions.API_KEY}&page=${this.page}`;
-    console.log("trand", url);
     return fetchService(url)
       .then(response => {
-        
+
       renderTemplateListMovies(handleMoviesMiddleWare(response.results));
        console.log("trand", response);
        return response;
     })
       .catch(error => console.log(error));
   },
-  // fetchMoviesQuerySearch(querySearch) {
-  //   if (!querySearch) {
-  //     return;
-  //   }
-  //   const url = `${moviesQueryOptions.BASE_URL}${moviesQueryOptions.MOVIES_SEARCH_URL}api_key=${moviesQueryOptions.API_KEY}&page=${this.page}&query=${querySearch}`;
-  //   return fetchService(url);
-  // },
+
   fetchMoviesQuerySearch() {
     if (!this.searchQuery) {
       return;
     }
-    console.log(this.searchQuery);
     const url = `${moviesQueryOptions.BASE_URL}${moviesQueryOptions.MOVIES_SEARCH_URL}api_key=${moviesQueryOptions.API_KEY}&page=${this.page}&query=${this.searchQuery}`;
-    console.log("by query", url);
     return fetchService(url)
       .then(response => {
-        console.log('object');
         renderTemplateListMovies(handleMoviesMiddleWare(response.results));
         console.log("by query", response);
         return response
