@@ -5,12 +5,12 @@ import renderTemplateListMovies from '../renderTemplateListMovies';
 
 const getTrendingMovies = () => {
   fetchQueryService.resetPage();
-  fetchQueryService.fetchMoviesTrand()
+  fetchQueryService
+    .fetchMoviesTrand()
     .then(response => {
-      handlePaginationTrand(response)
+      handlePaginationTrand(response);
     })
     .catch(error => console.log(error.message));
-
-}
+};
 
 export default getTrendingMovies;
