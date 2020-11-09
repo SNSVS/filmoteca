@@ -1,5 +1,6 @@
 import refs from './refs';
 import buttons from '../templates/buttons.hbs';
+import handlePaginateStorage from './paginate/handlePaginateStorage';
 // console.log(refs);
 
 function pullMyLibrary() {
@@ -15,6 +16,8 @@ function onMyLibrary() {
   const watcherBtn = document.getElementById('watcher-btn');
   const queueBtn = document.getElementById('queue-btn');
 
+
+  handlePaginateStorage(watchedMovie);
   //   console.log(watchedMovie);
 
   watcherBtn.addEventListener('click', onWatcherBtn);
@@ -25,12 +28,15 @@ function onMyLibrary() {
 
 function onWatcherBtn() {
   const watchedMovie = JSON.parse(localStorage.getItem('watched'));
+  console.log("click by watched");
   //   console.log(watchedMovie);
   //   res = watchedMovie;
-  return watchedMovie;
+  handlePaginateStorage(watchedMovie);
 }
 function onQueueBtn() {
   const queueMovie = JSON.parse(localStorage.getItem('queue'));
+  console.log(queueMovie);
+  console.log("click by queue");
   //   console.log(queueMovie);
-  return queueMovie;
+  handlePaginateStorage(queueMovie);
 }
