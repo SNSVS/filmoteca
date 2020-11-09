@@ -5,4 +5,5 @@ export default {
   homePage: document.getElementById('homePage'),
   watchedBtn: document.querySelector('.watched-js'),
   header: document.querySelector('.js-header'),
+  myLibrary: document.getElementById('myLibrary'),
 };

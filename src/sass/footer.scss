@@ -1,17 +1,21 @@
 .footer {
-    background-color: #F7F7F7;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    font-family: "Roboto Regular";
-    padding: 30px 0 30px 0;
+  background-color: #f7f7f7;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-family: 'Roboto Regular';
+  padding: 30px 0 30px 0;
 }
 .footer__author-link {
-    text-decoration: underline;
-    color: #000000;
+  text-decoration: underline;
+  color: #000000;
 }
 
 .search-form-box {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__heart {
+  color: #ff6b08;
 }

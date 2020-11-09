@@ -25,24 +25,36 @@ export const handleStateBtn = (response) => {
   }
 }
 
-const generateCountPages = (response) => {
-  if (response.total_pages < 3) {
-    return;
-  }
-  let capasityCount = response.total_pages - 2;
-  let countPages;
-  if (capasityCount <= maxCountPages) {
-    countPages = capasityCount;
+const generateCountPages = (response, isPrev) => {
+  let capasityCount, countPages;
+  if (!isPrev) {
+    if (response.total_pages < 3) {
+      return;
+    }
+    capasityCount = response.total_pages - response.page + 1;
+    if (capasityCount <= maxCountPages) {
+      countPages = capasityCount;
+    }
+    else {
+      countPages = maxCountPages;
+    }
   }
   else {
-    capasityCount -= maxCountPages;
-    countPages = maxCountPages;
+    capasityCount = response.page;
+    countPages = capasityCount;
+    if (capasityCount >= maxCountPages) {
+      countPages = maxCountPages;
+    }
   }
   return countPages;
 }
 
-export const updateBtnPagesContent = (btnPages, currentPage, toNext) => {
+export const updateBtnPagesContent = (btnPages, currentPage, toNext, totalPages) => {
   let firstPage = Number(currentPage);
+  if (totalPages - currentPage < btnPages.length) {
+    generatePagesBtn({page: currentPage, total_pages: totalPages}, false);
+    return;
+  }
   if (toNext) {
     btnPages.forEach((item, ind) => item.textContent = firstPage + ind);
   }
@@ -50,12 +62,17 @@ export const updateBtnPagesContent = (btnPages, currentPage, toNext) => {
     if (currentPage > 1) {
       firstPage -= 1;
     }
+    if (btnPages.length < maxCountPages) {
+      generatePagesBtn({page: currentPage, total_pages: totalPages}, true);
+      return;
+    }
     btnPages.forEach((item, ind) => item.textContent = firstPage + ind);
   }
 }
 
 export const generatePagesBtn = (response) => {
   const countPages = generateCountPages(response);
+  console.log("generate count", countPages);
 
   const pageItems = [];
   const {page} = response;
@@ -64,6 +81,9 @@ export const generatePagesBtn = (response) => {
     liItem.classList.add("pagination-pages--item");
     liItem.innerHTML = `<button class="pagination-pages--item__btn">${page + i}</button>`;
     pageItems.push(liItem);
+  }
+  if (countPages !== maxCountPages || refsPaginate.pagesList.childNodes.length + pageItems.length > maxCountPages) {
+    refsPaginate.pagesList.innerHTML = "";
   }
   refsPaginate.pagesList.append(...pageItems);
 }
