@@ -1,6 +1,4 @@
 .header {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../images/header/header-background.jpg);
   background-repeat: no-repeat;
   height: 230px;
   margin: 0 auto;
@@ -118,17 +116,29 @@
   background-color: #ff6b01;
 }
 
+.header-home {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/header/header-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-one-film {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/header/header-bg-one-film-320.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-library {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/header/header-background-2-320.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 @media (min-width: 768px) {
-  .header {
-    background: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0.5)
-      ),
-      url(../images/header/header-background-768.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
   .header__logo-title {
     display: inline;
   }
@@ -145,16 +155,71 @@
   .header-btn {
     width: 136px;
   }
+
+  .header-home {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(../images/header/header-background-768.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .header-one-film {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(../images/header/header-bg-one-film-768.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .header-library {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(../images/header/header-background-2-768.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 @media (min-width: 1024px) {
-  .header {
+  .header-home {
     background: linear-gradient(
         to right,
         rgba(0, 0, 0, 0.5),
         rgba(0, 0, 0, 0.5)
       ),
       url(../images/header/header-background-1024.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .header-one-film {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(../images/header/header-bg-one-film.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .header-library {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(../images/header/header-background-2-1024.jpg);
     background-repeat: no-repeat;
     background-size: cover;
   }
