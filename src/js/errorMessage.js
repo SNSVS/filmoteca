@@ -8,4 +8,5 @@ export default function errorMessage() {
   setTimeout(() => {
     errorMsgText.innerHTML = '';
   }, 200);
+  src / images / icons / keyboard - right - arrow - button.svg;
 }
