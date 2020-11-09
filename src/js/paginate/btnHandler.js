@@ -38,7 +38,6 @@ const generateCountPages = (response, isPrev) => {
     else {
       countPages = maxCountPages;
     }
-    console.log("count pages", countPages);
   }
   else {
     capasityCount = response.page;
@@ -52,7 +51,6 @@ const generateCountPages = (response, isPrev) => {
 
 export const updateBtnPagesContent = (btnPages, currentPage, toNext, totalPages) => {
   let firstPage = Number(currentPage);
-  console.log("total", totalPages, "current", currentPage);
   if (totalPages - currentPage < btnPages.length) {
     generatePagesBtn({page: currentPage, total_pages: totalPages}, false);
     return;
