@@ -31,7 +31,7 @@ export default {
   },
 
   showChosenPage(event) {
-    const {target, currentTarget} = event;
+    const { target, currentTarget } = event;
     if (target === currentTarget) {
       return;
     }
@@ -90,4 +90,4 @@ export default {
     const moviesToShow = this._movies.slice(this._skip, this._before);
     renderTemplateListMovies(handleMoviesMiddleWare(moviesToShow));
   },
-}
+};
