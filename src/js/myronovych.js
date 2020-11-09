@@ -19,7 +19,7 @@ const apiKey = '0582d3f510963f6ac84a3c592afe6834';
 refs.movies.addEventListener('click', onMovies);
 // refs.homePage.addEventListener('click', onHomePage)
 
-function onMovies(e) {
+export function onMovies(e) {
   if (e.target.nodeName !== 'IMG') {
     return;
   }

@@ -1,6 +1,7 @@
 import refs from './refs';
 import buttons from '../templates/buttons.hbs';
 import handlePaginateStorage from './paginate/handlePaginateStorage';
+import { onMovies } from './myronovych';
 // console.log(refs);
 
 function pullMyLibrary() {
@@ -9,6 +10,7 @@ function pullMyLibrary() {
 export default pullMyLibrary;
 
 function onMyLibrary() {
+  refs.movies.addEventListener('click', onMovies);
   refs.searchBtn.innerHTML = buttons();
   refs.movies.classList.add('movies__list');
 
@@ -26,9 +28,10 @@ function onMyLibrary() {
   //   console.log(watchedMovie);
 }
 
-function onWatcherBtn() {
+function onWatcherBtn(e) {
+  console.dir(e.target);
   const watchedMovie = JSON.parse(localStorage.getItem('watched'));
-  console.log("click by watched");
+  console.log('click by watched');
   //   console.log(watchedMovie);
   //   res = watchedMovie;
   handlePaginateStorage(watchedMovie);
@@ -36,7 +39,7 @@ function onWatcherBtn() {
 function onQueueBtn() {
   const queueMovie = JSON.parse(localStorage.getItem('queue'));
   console.log(queueMovie);
-  console.log("click by queue");
+  console.log('click by queue');
   //   console.log(queueMovie);
   handlePaginateStorage(queueMovie);
 }
