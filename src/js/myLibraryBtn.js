@@ -10,18 +10,18 @@ export default pullMyLibrary;
 
 function onMyLibrary() {
   refs.searchBtn.innerHTML = buttons();
+  refs.movies.classList.add('movies__list');
 
   const watchedMovie = JSON.parse(localStorage.getItem('watched'));
 
   const watcherBtn = document.getElementById('watcher-btn');
   const queueBtn = document.getElementById('queue-btn');
 
-
-  handlePaginateStorage(watchedMovie);
   //   console.log(watchedMovie);
 
   watcherBtn.addEventListener('click', onWatcherBtn);
   queueBtn.addEventListener('click', onQueueBtn);
+  handlePaginateStorage(watchedMovie);
   return watchedMovie;
   //   console.log(watchedMovie);
 }
