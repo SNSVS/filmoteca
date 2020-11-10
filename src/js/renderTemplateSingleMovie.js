@@ -36,7 +36,6 @@ function onWatchedBtnHandler(data) {
     if (newValues === null) {
       // FIRST CLICK
       localeWatchedValueArray.push(data);
-
       localStorage.setItem('watched', JSON.stringify(localeWatchedValueArray));
       localeWatchedValueArray.splice(0);
       watchedBtn.innerHTML = 'del from watched';

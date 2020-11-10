@@ -1,6 +1,5 @@
 import handlePaginationSearchQuery from '../paginate/handlePaginateSearchQuery';
 import fetchQueryService from '../services/fetchQueryService';
-import renderTemplateListMovies from '../renderTemplateListMovies';
 
 const getMoviesByQuery = query => {
   fetchQueryService.resetPage();

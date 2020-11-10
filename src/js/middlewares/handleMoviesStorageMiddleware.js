@@ -1,5 +1,3 @@
-import genreNames from '../../data/genres';
-
 const handleMoviesStorageMiddleWare = movies => {
   return movies.map(item => {
     item = {
