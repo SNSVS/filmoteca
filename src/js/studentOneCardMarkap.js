@@ -16,7 +16,6 @@ function oneStudetnCardHandler(e) {
         return student.id === id;
       });
       const oneStudentMarkap = studetnOneCardTpl(targetStudetnArray);
-      refs.searchBtn.innerHTML = '';
       refs.teamList.innerHTML = oneStudentMarkap;
       refs.teamList.classList.remove('movies__list');
       refs.teamList.classList.add('js-studentCard');
