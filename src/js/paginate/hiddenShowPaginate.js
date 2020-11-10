@@ -1,6 +1,4 @@
 import refsPaginate from '../refsPaginat';
-import btnActiveClassToggle from './btnActiveClassToggle';
-import fetchQueryService from '../services/fetchQueryService';
 
 export const hiddenShowPaginateArray = (pages) => {
   if (pages < 2) {
