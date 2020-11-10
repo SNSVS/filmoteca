@@ -11,14 +11,15 @@ function pullMyLibrary() {
 export default pullMyLibrary;
 
 function onMyLibrary() {
+  refs.myLibrary.autofocus = false;
   refs.movies.addEventListener('click', onMovies);
   refs.searchBtn.innerHTML = buttons();
   // refs.watchedBtn.classList.add('isActive');
   refs.movies.classList.add('movies__list');
 
   const watchedMovie = JSON.parse(localStorage.getItem('watched'));
-
   const watcherBtn = document.getElementById('watcher-btn');
+  watcherBtn.autofocus = true;
   const queueBtn = document.getElementById('queue-btn');
 
   //   console.log(watchedMovie);
@@ -42,6 +43,8 @@ function onQueueBtn() {
   const queueMovie = JSON.parse(localStorage.getItem('queue'));
   console.log(queueMovie);
   console.log('click by queue');
-  console.log(queueMovie);
+  const watcherBtn = document.getElementById('watcher-btn');
+  watcherBtn.autofocus = false;
+  //   console.log(queueMovie);
   handlePaginateStorage(queueMovie);
 }
