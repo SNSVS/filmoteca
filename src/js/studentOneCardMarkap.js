@@ -2,7 +2,7 @@ import refs from './refs.js';
 import studentsData from '../data/students';
 import studetnOneCardTpl from '../templates/student.hbs';
 
-refs.movies.addEventListener('click', oneStudetnCardHandler);
+refs.teamList.addEventListener('click', oneStudetnCardHandler);
 
 function oneStudetnCardHandler(e) {
   setTimeout(() => {
@@ -10,14 +10,12 @@ function oneStudetnCardHandler(e) {
       return;
     } else {
       let id = +e.target.id;
-      console.log();
       const targetStudetnArray = studentsData.find(function (student) {
         return student.id === id;
       });
       const oneStudentMarkap = studetnOneCardTpl(targetStudetnArray);
-      refs.movies.innerHTML = oneStudentMarkap;
-      refs.movies.addEventListener('click', oneStudetnCardHandler);
-      console.log(oneStudentMarkap);
+      refs.teamList.innerHTML = oneStudentMarkap;
+      refs.teamList.addEventListener('click', oneStudetnCardHandler);
     }
   }, 100);
 }
