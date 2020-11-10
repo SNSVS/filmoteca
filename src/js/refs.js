@@ -6,4 +6,5 @@ export default {
   watchedBtn: document.querySelector('.watched-js'),
   header: document.querySelector('.js-header'),
   myLibrary: document.getElementById('myLibrary'),
+  team: document.getElementById('team'),
 };
