@@ -13,6 +13,7 @@ export default pullMyLibrary;
 function onMyLibrary() {
   refs.movies.addEventListener('click', onMovies);
   refs.searchBtn.innerHTML = buttons();
+  // refs.watchedBtn.classList.add('isActive');
   refs.movies.classList.add('movies__list');
 
   const watchedMovie = JSON.parse(localStorage.getItem('watched'));
@@ -30,7 +31,7 @@ function onMyLibrary() {
 }
 
 function onWatcherBtn(e) {
-  console.dir(e.target);
+  console.dir(e.target.focus);
   const watchedMovie = JSON.parse(localStorage.getItem('watched'));
   console.log('click by watched');
   console.log(watchedMovie);

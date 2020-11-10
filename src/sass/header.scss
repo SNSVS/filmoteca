@@ -49,8 +49,7 @@
   transition: all 0.2s linear;
 }
 
-.main-menu__list-item-link:hover:after,
-.main-menu__list-item-link:focus:after {
+.main-menu__list-item-link:hover:after {
   opacity: 1;
   width: 100%;
 }
