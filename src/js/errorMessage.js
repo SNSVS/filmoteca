@@ -4,4 +4,9 @@ import refs from './refs';
 export default function errorMessage() {
   const errorMessage = errorSearch();
   refs.searchBtn.insertAdjacentHTML('afterEnd', errorMessage);
+  const errorMsgText = document.getElementById('error-msg-text');
+  setTimeout(() => {
+    errorMsgText.innerHTML = '';
+  }, 200);
+  src / images / icons / keyboard - right - arrow - button.svg;
 }
