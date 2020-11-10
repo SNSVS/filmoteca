@@ -1,7 +1,7 @@
 import refs from './refs';
 import buttons from '../templates/buttons.hbs';
 import handlePaginateStorage from './paginate/handlePaginateStorage';
-// import onMovies from './myronovych';
+import { onMovies } from './myronovych';
 // console.log(refs);
 // refs.movies.addEventListener('click', oneStudetnCardHandler);
 
@@ -11,7 +11,7 @@ function pullMyLibrary() {
 export default pullMyLibrary;
 
 function onMyLibrary() {
-  // refs.movies.addEventListener('click', onMovies);
+  refs.movies.addEventListener('click', onMovies);
   refs.searchBtn.innerHTML = buttons();
   refs.movies.classList.add('movies__list');
 
