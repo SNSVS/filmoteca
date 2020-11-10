@@ -1,4 +1,5 @@
 import fetchQueryService from '../services/fetchQueryService';
+import btnActiveClassToggle from './btnActiveClassToggle';
 import {handleStateBtn, updateBtnPagesContent} from "./btnHandler"
 
 export const queryNextPage = () => {
@@ -8,6 +9,7 @@ export const queryNextPage = () => {
       handleStateBtn(response);
       const btnPages = document.querySelectorAll(".pagination-pages--item__btn");
       updateBtnPagesContent(btnPages, fetchQueryService.getPage(), true, response.total_pages);
+      btnActiveClassToggle(fetchQueryService.getPage(), fetchQueryService.getPrevPage());
     })
     .catch(error => console.log(error));
 }
@@ -18,6 +20,7 @@ export const queryPrevPage = () => {
       handleStateBtn(response);
       const btnPages = document.querySelectorAll(".pagination-pages--item__btn");
       updateBtnPagesContent(btnPages, fetchQueryService.getPage(), false, response.total_pages);
+      btnActiveClassToggle(fetchQueryService.getPage(), fetchQueryService.getPrevPage());
     })
     .catch(error => console.log(error));
 }
@@ -32,6 +35,7 @@ export const queryCheckedPage = (event) => {
   fetchQueryService.fetchMoviesQuerySearch()
     .then(response => {
       handleStateBtn(response)
+      btnActiveClassToggle(fetchQueryService.getPage(), fetchQueryService.getPrevPage());
     })
     .catch(error => console.log(error));
 }

@@ -49,8 +49,7 @@
   transition: all 0.2s linear;
 }
 
-.main-menu__list-item-link:hover:after,
-.main-menu__list-item-link:focus:after {
+.main-menu__list-item-link:hover:after {
   opacity: 1;
   width: 100%;
 }
@@ -93,6 +92,17 @@
   color: #ff001b;
   font-family: 'Roboto Regular';
   padding-top: 30px;
+  animation: errorMessege 2s linear 1s;
+}
+
+@keyframes errorMessege {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 .header-btn-box {
@@ -140,7 +150,6 @@ button[autofocus] {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 
 @media (min-width: 768px) {
   .header__logo-title {
