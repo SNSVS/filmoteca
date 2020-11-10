@@ -19,7 +19,7 @@ const apiKey = '0582d3f510963f6ac84a3c592afe6834';
 refs.movies.addEventListener('click', onMovies);
 // refs.homePage.addEventListener('click', onHomePage)
 
-function onMovies(e) {
+export function onMovies(e) {
   if (e.target.nodeName !== 'IMG') {
     return;
   }
@@ -30,19 +30,5 @@ function onMovies(e) {
     refs.movies.removeEventListener('click', onMovies);
     refs.movies.classList.remove('movies__list');
     refs.searchBtn.innerHTML = '';
-    refs.homePage.addEventListener('click', onHomePage);
   });
-}
-
-function onHomePage() {
-  // renderTemplateListMovies(data, onefilmTpl, refs.movies);
-
-  fetchQueryService.resetPage();
-  getTrendingMovies();
-  refs.movies.classList.add('movies__list');
-  refs.movies.addEventListener('click', onMovies);
-  console.log(searchForm());
-  refs.searchBtn.innerHTML = searchForm();
-  refs.homePage.removeEventListener('click', onHomePage);
-  // refs.movies.classList.remove('movies__list')
 }
