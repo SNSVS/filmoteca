@@ -3,6 +3,7 @@ import refs from './refs';
 
 function renderTemplateListMovies(data)  {
   const movieTemplate = template(data);
+  refs.teamList.innerHTML = "";
   refs.movies.innerHTML = movieTemplate;
 };
 

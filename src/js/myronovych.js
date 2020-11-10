@@ -1,9 +1,9 @@
 import onefilmTpl from '../templates/onefilm.hbs';
-// import renderTemplateListMovies from './renderTemplateListMovies.js'
+import renderTemplateListMovies from './renderTemplateListMovies.js';
 import renderTemplateSingleMovie from './renderTemplateSingleMovie';
 import refs from './refs.js';
 import getTrendingMovies from './requestsToServer/getTrendingMovies';
-// import getMovieById from './requestsToServer/getMovieById';
+import getMovieById from './requestsToServer/getMovieById';
 import fetchQueryService from './services/fetchQueryService';
 import searchForm from '../templates/searchForm.hbs';
 // const single = document.querySelector('.single');
@@ -30,19 +30,5 @@ export function onMovies(e) {
     refs.movies.removeEventListener('click', onMovies);
     refs.movies.classList.remove('movies__list');
     refs.searchBtn.innerHTML = '';
-    refs.homePage.addEventListener('click', onHomePage);
   });
-}
-
-function onHomePage() {
-  // renderTemplateListMovies(data, onefilmTpl, refs.movies);
-
-  fetchQueryService.resetPage();
-  getTrendingMovies();
-  refs.movies.classList.add('movies__list');
-  refs.movies.addEventListener('click', onMovies);
-  console.log(searchForm());
-  refs.searchBtn.innerHTML = searchForm();
-  refs.homePage.removeEventListener('click', onHomePage);
-  // refs.movies.classList.remove('movies__list')
 }

@@ -7,4 +7,5 @@ export default {
   header: document.querySelector('.js-header'),
   myLibrary: document.getElementById('myLibrary'),
   team: document.getElementById('team'),
+  teamList: document.querySelector(".js-team__list"),
 };

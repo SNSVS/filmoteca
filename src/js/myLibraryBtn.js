@@ -3,6 +3,7 @@ import buttons from '../templates/buttons.hbs';
 import handlePaginateStorage from './paginate/handlePaginateStorage';
 import { onMovies } from './myronovych';
 // console.log(refs);
+// refs.movies.addEventListener('click', oneStudetnCardHandler);
 
 function pullMyLibrary() {
   refs.myLibrary.addEventListener('click', onMyLibrary);
@@ -32,7 +33,7 @@ function onWatcherBtn(e) {
   console.dir(e.target);
   const watchedMovie = JSON.parse(localStorage.getItem('watched'));
   console.log('click by watched');
-  //   console.log(watchedMovie);
+  console.log(watchedMovie);
   //   res = watchedMovie;
   handlePaginateStorage(watchedMovie);
 }
@@ -40,6 +41,6 @@ function onQueueBtn() {
   const queueMovie = JSON.parse(localStorage.getItem('queue'));
   console.log(queueMovie);
   console.log('click by queue');
-  //   console.log(queueMovie);
+  console.log(queueMovie);
   handlePaginateStorage(queueMovie);
 }
