@@ -9,6 +9,7 @@ export default function renderStudents(event) {
   refs.movies.innerHTML = '';
   refs.teamList.innerHTML = studentsTemplate(students);
   refs.teamList.classList.add('movies__list');
+  refs.teamList.classList.remove('js-studentCard');
 }
 // export default function renderStudents(event) {
 //   event.preventDefault();
