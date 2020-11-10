@@ -1,0 +1,33 @@
+.student__item {
+  margin-bottom: 20px;
+  @media (min-width: 768px) {
+    margin-bottom: 30px;
+  }
+}
+
+.student__name {
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.student__desc {
+  color: #ff6b08;
+  display: block;
+}
+
+.student__info {
+  color: #000000;
+  display: block;
+}
+
+.student__img {
+  cursor: pointer;
+  width: 280px;
+  height: 398px;
+  @media (min-width: 768px) {
+    & {
+      width: 274px;
+      height: 398px;
+    }
+  }
+}
