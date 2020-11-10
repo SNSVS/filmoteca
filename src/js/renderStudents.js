@@ -1,6 +1,6 @@
 import refs from './refs';
 import studentsTemplate from '../templates/students.hbs';
-import students from './students';
+import students from '../data/students';
 
 export default function renderStudents(event) {
   event.preventDefault();

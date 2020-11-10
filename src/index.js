@@ -9,6 +9,7 @@ import headerClassToggle from './js/headerClassToggle.js';
 import pullMyLibrary from './js/myLibraryBtn';
 import studentOneCardMarkap from './js/studentOneCardMarkap';
 import './js/ourTeam';
+import onHomePageClick from './js/onHomePageClick';
 
 // Для встраивания спинера
 // import spinner from './js/spinner'; // подключить файл
@@ -18,8 +19,9 @@ import './js/ourTeam';
 // import { Spinner } from 'spin.js';
 // import spinerOpts from './js/spinerOpts'
 getTrendingMovies();
+onHomePageClick();
+
 // getMoviesByQuery("Ten");
-// withLocalStorage();
 // const myLibruaryRef = document.querySelector("#myLibrary");
 // myLibruaryRef.addEventListener("click", () => {console.log("event event")})
 //

@@ -11,6 +11,11 @@ import errorNessege from '../errorMessage';
 const fetchQueryService = {
   page: 1,
   searchQuery: '',
+  prevPage: 1,
+
+  updatePrevPage() {
+    this.prevPage = this.page;
+  },
 
   fetchMoviesTrand() {
     const url = `${moviesQueryOptions.BASE_URL}${moviesQueryOptions.MOVIES_TRAND_URL}api_key=${moviesQueryOptions.API_KEY}&page=${this.page}`;
@@ -52,23 +57,30 @@ const fetchQueryService = {
   },
 
   resetPage() {
+    this.updatePrevPage();
     this.page = 1;
   },
   setPage(value) {
+    this.updatePrevPage();
     this.page = value;
   },
 
   getPage() {
     return this.page;
   },
+  getPrevPage() {
+    return this.prevPage;
+  },
 
   incrementPage() {
+    this.updatePrevPage();
     this.page += 1;
   },
   decrementPage() {
     if (this.page < 2) {
       return;
     }
+    this.updatePrevPage();
     this.page -= 1;
   },
 };

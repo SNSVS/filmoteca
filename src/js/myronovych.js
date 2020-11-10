@@ -1,9 +1,9 @@
 import onefilmTpl from '../templates/onefilm.hbs';
-// import renderTemplateListMovies from './renderTemplateListMovies.js'
+import renderTemplateListMovies from './renderTemplateListMovies.js';
 import renderTemplateSingleMovie from './renderTemplateSingleMovie';
 import refs from './refs.js';
 import getTrendingMovies from './requestsToServer/getTrendingMovies';
-// import getMovieById from './requestsToServer/getMovieById';
+import getMovieById from './requestsToServer/getMovieById';
 import fetchQueryService from './services/fetchQueryService';
 import searchForm from '../templates/searchForm.hbs';
 // const single = document.querySelector('.single');
@@ -19,7 +19,7 @@ const apiKey = '0582d3f510963f6ac84a3c592afe6834';
 refs.movies.addEventListener('click', onMovies);
 // refs.homePage.addEventListener('click', onHomePage)
 
-export function onMovies(e) {
+function onMovies(e) {
   if (e.target.nodeName !== 'IMG') {
     return;
   }
