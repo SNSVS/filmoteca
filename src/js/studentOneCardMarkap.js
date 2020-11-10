@@ -2,7 +2,9 @@ import refs from './refs.js';
 import studentsData from '../data/students';
 import studetnOneCardTpl from '../templates/student.hbs';
 
-refs.teamList.addEventListener('click', oneStudetnCardHandler);
+refs.team.addEventListener("click", () => {
+  refs.teamList.addEventListener('click', oneStudetnCardHandler);
+});
 
 function oneStudetnCardHandler(e) {
   setTimeout(() => {
@@ -15,7 +17,7 @@ function oneStudetnCardHandler(e) {
       });
       const oneStudentMarkap = studetnOneCardTpl(targetStudetnArray);
       refs.teamList.innerHTML = oneStudentMarkap;
-      refs.teamList.addEventListener('click', oneStudetnCardHandler);
+      refs.teamList.removeEventListener('click', oneStudetnCardHandler);
     }
   }, 100);
 }
