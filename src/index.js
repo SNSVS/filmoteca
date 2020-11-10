@@ -8,6 +8,7 @@ import debouncedInputQuery from './js/homePage';
 import headerClassToggle from './js/headerClassToggle.js';
 import pullMyLibrary from './js/myLibraryBtn';
 import studentOneCardMarkap from './js/studentOneCardMarkap';
+import './js/ourTeam';
 
 // Для встраивания спинера
 // import spinner from './js/spinner'; // подключить файл
