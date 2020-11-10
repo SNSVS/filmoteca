@@ -126,6 +126,10 @@
   background-color: #ff6b01;
 }
 
+button[autofocus] {
+  background-color: #ff6b01;
+}
+
 .header-home {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../images/header/header-background.jpg);
