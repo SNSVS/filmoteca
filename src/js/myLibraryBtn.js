@@ -19,7 +19,6 @@ function onMyLibrary() {
   watcherBtn.autofocus = true;
   const queueBtn = document.getElementById('queue-btn');
 
-
   watcherBtn.addEventListener('click', onWatcherBtn);
   queueBtn.addEventListener('click', onQueueBtn);
   handlePaginateStorage(watchedMovie);
@@ -27,16 +26,11 @@ function onMyLibrary() {
 }
 
 function onWatcherBtn(e) {
-  console.dir(e.target.focus);
   const watchedMovie = JSON.parse(localStorage.getItem('watched'));
-  console.log('click by watched');
-  console.log(watchedMovie);
   handlePaginateStorage(watchedMovie);
 }
 function onQueueBtn() {
   const queueMovie = JSON.parse(localStorage.getItem('queue'));
-  console.log(queueMovie);
-  console.log('click by queue');
   const watcherBtn = document.getElementById('watcher-btn');
   watcherBtn.autofocus = false;
   handlePaginateStorage(queueMovie);

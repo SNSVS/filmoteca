@@ -19,7 +19,6 @@ function oneStudetnCardHandler(e) {
       refs.teamList.innerHTML = oneStudentMarkap;
       refs.teamList.classList.remove('movies__list');
       refs.teamList.classList.add('js-studentCard');
-
       refs.teamList.removeEventListener('click', oneStudetnCardHandler);
     }
   }, 100);
