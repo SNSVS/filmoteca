@@ -1,8 +1,10 @@
+import bondarenkoIMG from '../images/studentsphoto/bondarenko.jpg';
+
 export default [
   {
     id: 1,
     name: 'Александр Миронович',
-    src: 'images/studentsphoto/myronovych.jpg',
+    src: bondarenkoIMG,
     description: 'Участник команды SNSVS',
     info: 'Молчалив пока занят делом. Серьезный финансист',
   },
