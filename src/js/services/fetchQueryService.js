@@ -38,7 +38,6 @@ const fetchQueryService = {
         hiddenShowPaginateArray(response.total_pages);
         renderTemplateListMovies(handleMoviesMiddleWare(response.results));
         if (response.results.length === 0) errorNessege();
-        console.log('by query', response);
         return response;
       })
       .catch(error => console.log(error));

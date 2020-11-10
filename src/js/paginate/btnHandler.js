@@ -1,7 +1,6 @@
 import refsPaginate from '../refsPaginat';
 
 const maxCountPages = 5;
-
 const btnDisable = (btn) => {
   btn.setAttribute("disabled", "true");
 }
@@ -72,8 +71,6 @@ export const updateBtnPagesContent = (btnPages, currentPage, toNext, totalPages)
 
 export const generatePagesBtn = (response) => {
   const countPages = generateCountPages(response);
-  console.log("generate count", countPages);
-
   const pageItems = [];
   const {page} = response;
   for (let i = 0; i < countPages; i++) {

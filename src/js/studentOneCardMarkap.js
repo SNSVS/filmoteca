@@ -8,7 +8,7 @@ refs.team.addEventListener('click', () => {
 
 function oneStudetnCardHandler(e) {
   setTimeout(() => {
-    if (e.target === e.currentTarget) {
+    if (e.target.nodeName !== 'IMG') {
       return;
     } else {
       let id = +e.target.id;

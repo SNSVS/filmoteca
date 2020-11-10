@@ -13,13 +13,10 @@ export default {
   start() {
     const target = document.getElementById('spinner');
     this.spinner = new Spinner(this.opts).spin(target);
-    console.log('spinnet.start');
     return this.spinner;
   },
   stop() {
-    const target = document.getElementById('spinner');
     this.spinner.stop();
-    console.log('spinnet.stop');
     return this.spinner;
   },
 };
