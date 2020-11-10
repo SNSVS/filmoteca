@@ -4,6 +4,5 @@ import students from './students';
 
 export default function renderStudents(event) {
   event.preventDefault();
-
   refs.movies.innerHTML = studentsTemplate(students);
 }
