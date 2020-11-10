@@ -5,6 +5,5 @@ import students from './students';
 export default function renderStudents(event) {
   event.preventDefault();
   console.log('pamparam');
-
   refs.movies.innerHTML = studentsTemplate(students);
 }
