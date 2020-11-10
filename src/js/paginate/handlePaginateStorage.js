@@ -4,8 +4,13 @@ import { handleStateBtn, generatePagesBtn } from './btnHandler';
 import { clearEventsListenersPagesSearch } from './toggleListenersPagesSearch';
 import { clearEventsListenersPagesTranding } from './toggleListenersPagesTranding';
 import { addListenersPagesStorage } from './toggleListenersStoragePages';
+import btnActiveClassToggle from './btnActiveClassToggle';
+import fetchQueryService from '../services/fetchQueryService';
 
 const handlePaginateStorage = moviesArray => {
+  if (!moviesArray) {
+    return;
+  }
   clearEventsListenersPagesTranding();
   clearEventsListenersPagesSearch();
   // console.log('come to handle paginate');
@@ -21,6 +26,10 @@ const handlePaginateStorage = moviesArray => {
   storagePaginateService.showContent();
   handleStateBtn(response);
   generatePagesBtn(response);
+  btnActiveClassToggle(
+    fetchQueryService.getPage(),
+    fetchQueryService.getPrevPage(),
+  );
   addListenersPagesStorage();
 };
 
