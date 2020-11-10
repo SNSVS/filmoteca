@@ -2,8 +2,6 @@ import refs from './refs';
 import buttons from '../templates/buttons.hbs';
 import handlePaginateStorage from './paginate/handlePaginateStorage';
 import { onMovies } from './myronovych';
-// console.log(refs);
-// refs.movies.addEventListener('click', oneStudetnCardHandler);
 
 function pullMyLibrary() {
   refs.myLibrary.addEventListener('click', onMyLibrary);
@@ -14,7 +12,6 @@ function onMyLibrary() {
   refs.myLibrary.autofocus = false;
   refs.movies.addEventListener('click', onMovies);
   refs.searchBtn.innerHTML = buttons();
-  // refs.watchedBtn.classList.add('isActive');
   refs.movies.classList.add('movies__list');
 
   const watchedMovie = JSON.parse(localStorage.getItem('watched'));
@@ -22,13 +19,11 @@ function onMyLibrary() {
   watcherBtn.autofocus = true;
   const queueBtn = document.getElementById('queue-btn');
 
-  //   console.log(watchedMovie);
 
   watcherBtn.addEventListener('click', onWatcherBtn);
   queueBtn.addEventListener('click', onQueueBtn);
   handlePaginateStorage(watchedMovie);
   return watchedMovie;
-  //   console.log(watchedMovie);
 }
 
 function onWatcherBtn(e) {
@@ -36,7 +31,6 @@ function onWatcherBtn(e) {
   const watchedMovie = JSON.parse(localStorage.getItem('watched'));
   console.log('click by watched');
   console.log(watchedMovie);
-  //   res = watchedMovie;
   handlePaginateStorage(watchedMovie);
 }
 function onQueueBtn() {
@@ -45,6 +39,5 @@ function onQueueBtn() {
   console.log('click by queue');
   const watcherBtn = document.getElementById('watcher-btn');
   watcherBtn.autofocus = false;
-  //   console.log(queueMovie);
   handlePaginateStorage(queueMovie);
 }
