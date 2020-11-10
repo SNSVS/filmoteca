@@ -4,6 +4,7 @@ import students from '../data/students';
 import { hiddenPagination } from './paginate/hiddenShowPaginate';
 
 export default function renderStudents(event) {
+  refs.searchBtn.innerHTML = '';
   refs.movies.classList.remove('movies__list');
   hiddenPagination();
   event.preventDefault();
