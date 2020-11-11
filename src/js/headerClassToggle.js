@@ -17,7 +17,7 @@ function libraryHeaderToggleClassHandler() {
 }
 
 function oneFilmCardHeaderToggleClassHandler(e) {
-  if (e.target === e.currentTarget) {
+  if (e.target.nodeName !== 'IMG') {
     return;
   }
   refs.header.classList.add('header-one-film');
